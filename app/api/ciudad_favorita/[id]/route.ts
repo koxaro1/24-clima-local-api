@@ -2,8 +2,6 @@ import { requireUser } from '../../../../lib/auth';
 import { borrarCiudad, guardarCiudad, idSchema } from '../../../../lib/ciudades';
 import { errorResponse, json, parse, readJson } from '../../../../lib/http';
 
-export const runtime = 'nodejs';
-
 interface Contexto {
   params: Promise<{ id: string }>;
 }

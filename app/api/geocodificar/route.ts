@@ -3,8 +3,6 @@ import { requireUser } from '../../../lib/auth';
 import { buscarCiudades } from '../../../lib/geocodificar';
 import { errorResponse, json, parse } from '../../../lib/http';
 
-export const runtime = 'nodejs';
-
 const schema = z.object({ q: z.string().trim().min(2).max(80) });
 
 export async function GET(req: Request): Promise<Response> {

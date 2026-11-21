@@ -3,8 +3,6 @@ import { errorResponse, json, parse, readJson } from '../../../../lib/http';
 import { clienteIp, limitar } from '../../../../lib/ratelimit';
 import { renovar } from '../../../../lib/firebaseRest';
 
-export const runtime = 'nodejs';
-
 const schema = z.object({ refreshToken: z.string().min(10).max(2000) });
 
 export async function POST(req: Request): Promise<Response> {

@@ -3,8 +3,6 @@ import { errorResponse, json, parse, readJson } from '../../../../lib/http';
 import { clienteIp, limitar } from '../../../../lib/ratelimit';
 import { registrar } from '../../../../lib/firebaseRest';
 
-export const runtime = 'nodejs';
-
 const schema = z.object({
   email: z.string().email().max(200),
   password: z.string().min(8).max(200),

@@ -3,8 +3,6 @@ import { requireUser } from '../../../lib/auth';
 import { obtenerClima } from '../../../lib/clima';
 import { errorResponse, json, parse } from '../../../lib/http';
 
-export const runtime = 'nodejs';
-
 const coordenada = (min: number, max: number) =>
   z
     .string()
