@@ -4,6 +4,7 @@
 | ----- | ----- | ----------------- | ------------------------------- |
 
 ## Corrección: firebase-admin no cargaba en Vercel
+
 - **Qué propuso la IA:** usar firebase-admin en las rutas de la API, con export const runtime = 'nodejs'.
 - **Qué falló:** el build rechazó esa línea con cacheComponents, y luego /api/clima dio 500 en Vercel por ERR_REQUIRE_ESM (jose es solo ESM y jwks-rsa lo cargaba con require).
 - **Cómo lo detecté:** logs de Vercel (Runtime Logs), no el mensaje genérico de la API.
