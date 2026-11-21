@@ -35,5 +35,8 @@
     "typescript": "^5",
     "vitest": "^5.1.1"
   },
-  "vitest": "null"
+  "vitest": "null",
+  "overrides": {
+    "jose": "^4.15.9"
+  }
 }
