@@ -25,6 +25,8 @@ export function errorResponse(e: unknown): NextResponse {
     const cuerpo = e.detalles ? { error: e.message, detalles: e.detalles } : { error: e.message };
     return json(cuerpo, e.status);
   }
+  console.error('Error interno:', e instanceof Error ? e.message : 'desconocido');
+  console.error('Error interno:', e instanceof Error ? e.message : 'desconocido');
   return json({ error: 'Error interno' }, 500);
 }
 
