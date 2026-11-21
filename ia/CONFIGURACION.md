@@ -20,3 +20,9 @@ Ninguno permitido a la IA (webfetch y curl denegados). Solo el modelo del provee
 ## Ajustes hechos tras las pruebas
 
 (completar)
+
+## Límites declarados
+- Windows nativo: no hay sandbox real. Las barreras son los permisos de opencode.json (deny y ask) y el plugin guard, que revisa el texto de cada llamada antes de ejecutarla.
+- Las pruebas 3 y 4 (grep -r y node -e) las frena el guard por reglas de texto. Un sandbox las contendría por aislamiento, y aquí no lo hay.
+- El guard puede fallar ante comandos escritos de formas que sus reglas no prevén. No sustituye a un contenedor ni a WSL2.
+- Se descartó WSL2 porque el profesor pidió trabajar en Windows.
