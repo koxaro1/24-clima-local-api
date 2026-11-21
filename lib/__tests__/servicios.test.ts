@@ -46,15 +46,13 @@ describe('geocodificar', () => {
   it('traduce la respuesta del servicio', async () => {
     vi.stubGlobal(
       'fetch',
-      vi
-        .fn()
-        .mockResolvedValue(
-          respuesta({
-            results: [
-              { id: 1, name: 'Medellín', latitude: 6.25, longitude: -75.56, country: 'Colombia' },
-            ],
-          }),
-        ),
+      vi.fn().mockResolvedValue(
+        respuesta({
+          results: [
+            { id: 1, name: 'Medellín', latitude: 6.25, longitude: -75.56, country: 'Colombia' },
+          ],
+        }),
+      ),
     );
     const r = await buscarCiudades('Medellín');
     expect(r[0]).toMatchObject({ nombre: 'Medellín', pais: 'Colombia', region: null });
@@ -76,17 +74,15 @@ describe('Firebase Auth REST', () => {
     vi.stubEnv('FIREBASE_WEB_API_KEY', 'clave-falsa');
     vi.stubGlobal(
       'fetch',
-      vi
-        .fn()
-        .mockResolvedValue(
-          respuesta({
-            idToken: 't',
-            refreshToken: 'r',
-            expiresIn: '3600',
-            localId: 'u1',
-            email: 'a@b.co',
-          }),
-        ),
+      vi.fn().mockResolvedValue(
+        respuesta({
+          idToken: 't',
+          refreshToken: 'r',
+          expiresIn: '3600',
+          localId: 'u1',
+          email: 'a@b.co',
+        }),
+      ),
     );
     expect(await registrar('a@b.co', '12345678')).toEqual({
       token: 't',
